@@ -28,18 +28,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Stung Eye - Edit Post Wootly Grins</title>
+    <title>StarcraftDB</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <div id="wrapper">
         <div id="header">
-            <h1><a href="index.php">Stung Eye - Edit Post</a></h1>
+            <h1><a href="index.php">StarcraftDB</a></h1>
         </div> <!-- END div id="header" -->
-<ul id="menu">
-    <li><a href="index.php" >Home</a></li>
-    <li><a href="create.php" >New Post</a></li>
-</ul> <!-- END div id="menu" -->
 
 <div id="all_blogs">
   <form action="process_unit.php" method="post" enctype="multipart/form-data">
