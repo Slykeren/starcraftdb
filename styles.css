@@ -1,0 +1,52 @@
+
+body
+{
+    background-color: #151d1c;
+    color: gray;
+}
+
+table 
+{
+    background-color: #272a21;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+}
+
+td
+{
+    width: 150px;
+    text-align: center;
+}
+
+th
+{
+    
+	width:100%;
+    width: 150px;
+    
+}
+
+a 
+{
+    color: #7d9734; 
+    text-decoration: none;
+}
+
+ul
+{
+    list-style: none;
+}
+
+ul#menu li 
+{
+    display: inline;
+}
+
+#unit_info
+{
+    display: block;
+    float: right;
+    margin-right: 100px;
+}
