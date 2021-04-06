@@ -50,9 +50,9 @@ $password_check = password_verify($password, $user['password']);
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
-
+    <h1><a href="index.php">StarcraftDB</a></h1>
     <body>
     <h1>Enter your information to login</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -74,6 +74,9 @@ $password_check = password_verify($password, $user['password']);
             <p>
                 <input type="submit" name="login" value="Login">
             </p>
+
+            <p>Don't have an account? Create one <a href="process_registration.php">here</a></p>
+
         </fieldset>
 
 
