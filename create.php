@@ -2,6 +2,21 @@
 
 #require 'authenticate.php';
 
+  session_start();
+
+  if(isset($_SESSION['user']))
+  {
+    if($_SESSION['user'] != 'admin')
+    {
+      header('Location: index.php');
+    }
+  }
+  else
+  {
+    header('Location: index.php');
+  }
+
+  var_dump($_SESSION['user']);
 
 ?>
 
@@ -13,7 +28,7 @@
 <head>
     <meta charset="utf-8">
     <title>StarcraftDB</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
     <div id="wrapper">
