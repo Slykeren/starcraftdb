@@ -28,7 +28,7 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
     <div id="wrapper">
@@ -73,7 +73,7 @@
                 <td><a href="edit.php?unit_id=<?=$unit_id?>">edit</a></td>
             <?php endif ?>
             <td><img src="img/<?=$unit['image']?>" alt="" width="40" height="40"></td>
-            <td><?= $unit['name'] ?></td>
+            <td><a href="show.php?id=<?=$unit_id?>"><?= $unit['name'] ?></a></td>
             <td><?= $unit['race'] ?></td>
             <td><?= $unit['type'] ?></td>
             <td><?= $unit['requirements'] ?></td>
@@ -84,14 +84,15 @@
             <td><?= $unit['dps'] ?></td>
             <td><?= $unit['attack_range'] ?></td>
             <td><img src="img/health.png" alt=""><?= $unit['health']?> <?php if($unit['shields'] != "0" ) : ?> <img src="img/shields.png" alt=""> <?=$unit['shields']?> <?php endif ?> </td>
-            <td> <img src="img/armor.png" alt=""> <?= $unit['armor'] ?></td>
+            <td><img src="img/armor.png" alt=""> <?= $unit['armor'] ?></td>
             <td><?= $unit['sight'] ?></td>
             <td><?= $unit['speed'] ?></td>
+            
             
         </tr>
 
         <?php endforeach ?>
-
+                    
 
 
     </table>
