@@ -11,7 +11,7 @@
     $password = password_hash(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS), PASSWORD_DEFAULT);
     $password_confirm = filter_input(INPUT_POST, 'password_confirm', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    $username_empty = FALSE;
+    $username_empty  = FALSE;
     $username_exists = FALSE;
     $passwords_match = FALSE;
 
@@ -72,7 +72,7 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 <body>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -83,26 +83,26 @@
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username">
                 <?php if($username_exists == TRUE) :?>
-                <p>That username is already taken</p>
+                    <p>That username is already taken</p>
                 <?php endif ?>
                 <?php if($username_empty == TRUE) :?>
-                <p>Please enter a username</p>
+                    <p>Please enter a username</p>
                 <?php endif ?>
             </p>
 
             <p>
+                <?php if(empty($_POST['password'])) :?>
+                    <p>Please enter a password</p>
+                <?php endif ?>
                 <label for="password">Password</label>
                 <input type="text" name="password" id="password">
-                <?php if(empty($_POST['password'])) :?>
-                <p>Please enter a password</p>
-                <?php endif ?>
             </p>
 
             <p>
                 <label for="password_confirm">Confirm Password</label>
                 <input type="text" name="password_confirm" id="password_confirm">
                 <?php if($passwords_match == FALSE) : ?>
-                <p>Passwords do not match</p>
+                    <p>Passwords do not match</p>
                 <?php endif ?>
             </p>
 
