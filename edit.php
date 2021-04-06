@@ -2,6 +2,7 @@
 
   #require 'authenticate.php';
   require("connect.php");
+  session_start();
 
   $unit_id = filter_input(INPUT_GET, 'unit_id', FILTER_SANITIZE_NUMBER_INT);
   $idType = is_numeric($_GET['unit_id']);
@@ -16,7 +17,18 @@
     header('Location: index.php');
   }
 
-
+  if(isset($_SESSION['user']))
+  {
+    if($_SESSION['user'] != 'admin')
+    {
+      header('Location: index.php');
+    }
+  }
+  else
+  {
+    header('Location: index.php');
+  }
+  
   
 
 ?>
@@ -29,7 +41,7 @@
 <head>
     <meta charset="utf-8">
     <title>StarcraftDB</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
     <div id="wrapper">
