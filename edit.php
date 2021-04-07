@@ -168,7 +168,7 @@
 
       <p>
         <label for="description">Description</label>
-        <textarea name="description" id="description" cols="30" rows="4"><?=$unit['description']?>"</textarea>
+        <textarea name="description" id="description" cols="30" rows="4"><?=$unit['description']?></textarea>
       </p>
 
       <p>
@@ -178,7 +178,7 @@
 
       <p>
         <label for="img">Image</label>
-        <input type="file" name="image" id="image" accept="image/*">
+        <input type="file" name="image" id="image" accept="image/*" >
       </p>
 
       <p>
