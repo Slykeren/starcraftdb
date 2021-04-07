@@ -2,12 +2,17 @@
 require('connect.php');
 session_start();
 
-$unit_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$unit_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $query = "SELECT * FROM units WHERE unit_id = :unit_id";
 $statement = $db -> prepare($query);
 $statement -> bindValue(':unit_id', $unit_id);
 $statement -> execute();
 $unit = $statement -> fetch();
+
+$commentQuery = "SELECT * FROM comments WHERE unit_id = $unit_id ORDER BY timestamp DESC";
+$commentStatement = $db -> prepare($commentQuery);
+$commentStatement -> execute();
+$comments = $commentStatement -> fetchAll();
 
 ?>
 
@@ -49,7 +54,30 @@ $unit = $statement -> fetch();
         </div>
 
 
+        <div style="margin-top: 900px;">
+            <div> <!-- New comment box -->
+                <form action="process_comment.php" method="post" >
+                    <fieldset>
 
+                        <input type="hidden" name="unit_id" id="unit_id" value="<?=$unit_id?>">
+                        <input type="hidden" name="username" id="username" value="<?=$_SESSION['user']?>">
+                        <textarea name="comment" id="comment" cols="40" rows="5"></textarea>
+                        <input type="submit" name="submitComment" value="Submit">
+
+                    </fieldset>
+                </form>
+            </div>
+        
+            <div> <!-- display of all comments -->
+                
+                <?php foreach($comments as $comment) :?>
+                    <h4><?=$comment['username']?>     <?=$comment['timestamp']?></h4>
+                    <p> <?=$comment['comment']?></p>
+                <?php endforeach ?>
+
+            </div>
+
+        </div>
 
 
 
