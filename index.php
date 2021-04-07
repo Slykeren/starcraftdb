@@ -38,6 +38,7 @@
     <ul id="menu">
         <?php if($_SESSION['user'] == 'admin') : ?>
         <li><a href="create.php">New Unit</a></li>
+        <li><a href="view_users.php">View Users</a></li>
         <?php endif ?>
     </ul> <!-- END div id="menu" -->
 
