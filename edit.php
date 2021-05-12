@@ -178,7 +178,7 @@
 
       <p>
         <label for="img">Image</label>
-        <input type="file" name="image" id="image" accept="image/*" >
+        <input type="file" name="image" id="image" accept="image/*">
       </p>
 
       <p>

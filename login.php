@@ -31,15 +31,6 @@ $password_check = password_verify($password, $user['password']);
         }
 
 
-        var_dump($_SESSION);
-        var_dump($password);
-        var_dump($username);
-        var_dump($password_is_valid);
-        var_dump($error);
-        var_dump($password_check);
-        var_dump($user['password']);
-
-
 
     }
 
@@ -49,15 +40,17 @@ $password_check = password_verify($password, $user['password']);
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>StarcraftDB</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
+<body>
     <h1><a href="index.php">StarcraftDB</a></h1>
-    <body>
+    
     <h1>Enter your information to login</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <legend>Login</legend>
+        
         <fieldset>
+        <legend>Login</legend>
             <?php if(empty($user)){echo $error;} ?>
             <?php if($password_is_valid == FALSE){echo $error;} ?>
 

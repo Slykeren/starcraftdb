@@ -16,7 +16,6 @@
         $_SESSION['user'] = "";
     }
 
-    var_dump($_SESSION['user']);
 
 
 ?>
@@ -27,7 +26,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>StarcraftDB</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>

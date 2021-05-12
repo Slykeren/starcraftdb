@@ -16,10 +16,11 @@ $comments = $commentStatement -> fetchAll();
 
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>StarcraftDB</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
@@ -71,7 +72,7 @@ $comments = $commentStatement -> fetchAll();
             <div> <!-- display of all comments -->
                 
                 <?php foreach($comments as $comment) :?>
-                    <h4><?=$comment['username']?>     <?=$comment['timestamp']?></h4>
+                    <h4><?=$comment['username']?>     <?=$comment['timestamp']?>   <?php if($_SESSION['user'] == 'admin') :?>   <form action="delete_comment.php" method="POST"><input type="submit" name="delete_comment" value="Delete"><input type="hidden" name="comment_id" id="comment_id" value="<?=$comment['comment_id']?>"></form> <?php endif ?></h4>
                     <p> <?=$comment['comment']?></p>
                 <?php endforeach ?>
 

@@ -53,10 +53,6 @@
         $race_id = 3;
     }
 
-var_dump($strong_against);
-var_dump($name);
-var_dump($race);
-var_dump($image);
     
     $queryUpdate = "UPDATE units SET name = :name, type = :type, requirements = :requirements, built_from = :built_from, cost_minerals = :cost_minerals, 
     cost_gas = :cost_gas, cost_supply = :cost_supply, attributes = :attributes, targets = :targets, damage = :damage, dps = :dps, attack_cooldown = :attack_cooldown,

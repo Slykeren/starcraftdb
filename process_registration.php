@@ -55,6 +55,7 @@
                 $statement->bindValue(':username', $username);
                 $statement->bindValue(':password', $password);
                 $statement->execute();
+                header('Location: index.php');
             } 
         }
 
@@ -71,10 +72,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>StarcraftDB</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
 <body>
-    
+<h1><a href="index.php">StarcraftDB</a></h1>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <fieldset>
 
@@ -83,16 +84,16 @@
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username">
                 <?php if($username_exists == TRUE) :?>
-                    <p>That username is already taken</p>
+                    <span>That username is already taken</span>
                 <?php endif ?>
                 <?php if($username_empty == TRUE) :?>
-                    <p>Please enter a username</p>
+                    <span>Please enter a username</span>
                 <?php endif ?>
             </p>
 
             <p>
                 <?php if(empty($_POST['password'])) :?>
-                    <p>Please enter a password</p>
+                    <span>Please enter a password</span>
                 <?php endif ?>
                 <label for="password">Password</label>
                 <input type="text" name="password" id="password">
@@ -102,7 +103,7 @@
                 <label for="password_confirm">Confirm Password</label>
                 <input type="text" name="password_confirm" id="password_confirm">
                 <?php if($passwords_match == FALSE) : ?>
-                    <p>Passwords do not match</p>
+                    <span>Passwords do not match</span>
                 <?php endif ?>
             </p>
 

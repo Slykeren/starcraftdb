@@ -11,7 +11,10 @@
 
     $users = $statement -> fetchAll();
 
-
+    if($_SESSION['user'] != "admin")
+    {
+        header("Location: index.php");
+    }
 
 
 ?>
@@ -41,7 +44,12 @@
     
     <?php foreach($users as $user): ?>
         <tr>
-            <td><?=$user['username']?></td>
+            <td><?=$user['username']?> 
+            <form action="edit_users.php" method="POST">
+            <input type="submit" name="edit" value="Edit">
+            <input type="submit" name="delete" value="delete">
+            <input type="hidden" name="id" value="<?=$user['id']?>">
+            </form></td>
         </tr>
     <?php endforeach ?>
     </table>
